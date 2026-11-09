@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone, type LucideIcon } from 'lucide-react'
 import { Link } from 'react-router'
 import { Container } from '@/components/ui/Container'
-import { FOOTER_LINKS } from '@/config/navigation'
+import { FOOTER_LINKS, ROUTES } from '@/config/navigation'
 import { CONTACT, SITE } from '@/config/site'
 
 const CONTACT_ITEMS: readonly { icon: LucideIcon; text: string }[] = [
@@ -44,8 +44,13 @@ export function Footer() {
         </address>
       </Container>
 
-      <Container className="pb-6 text-sm text-tint md:pb-7">
-        © {new Date().getFullYear()} {SITE.name}
+      <Container className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 pb-6 text-sm text-tint md:pb-7">
+        <p>
+          © {new Date().getFullYear()} {SITE.name}
+        </p>
+        <Link to={ROUTES.adminLogin} className="underline underline-offset-4 hover:no-underline">
+          Masuk admin
+        </Link>
       </Container>
     </footer>
   )

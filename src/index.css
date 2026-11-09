@@ -18,6 +18,8 @@
   --color-tint: #dce5ff; /* teks sekunder di latar gelap */
   --color-line: #c9d3f2; /* garis pemisah di latar terang */
   --color-surface: #eaf0ff;
+  --color-canvas: #f5f8ff; /* latar area kerja panel admin */
+  --color-danger: #b3261e; /* pesan galat di latar putih */
   --color-placeholder-line: #7c93e6; /* garis putus-putus kotak foto sementara */
 
   --container-site: 75rem; /* 1200px */

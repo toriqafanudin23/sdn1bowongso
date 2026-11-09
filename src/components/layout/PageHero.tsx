@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { Link } from 'react-router'
 import { Container } from '@/components/ui/Container'
 
@@ -11,6 +12,8 @@ interface PageHeroProps {
   breadcrumb: readonly BreadcrumbItem[]
   title: string
   description: string
+  /** Konten tambahan di bawah deskripsi (mis. status dan tombol aksi PPDB). */
+  children?: ReactNode
 }
 
 /**
@@ -18,7 +21,7 @@ interface PageHeroProps {
  * judul besar, dan deskripsi singkat. Seperti Hero beranda, navbar menimpa bagian
  * atasnya sehingga padding atas memakai `--header-h`.
  */
-export function PageHero({ breadcrumb, title, description }: PageHeroProps) {
+export function PageHero({ breadcrumb, title, description, children }: PageHeroProps) {
   return (
     <section className="bg-grid pt-(--header-h) text-white">
       <Container className="pt-2 pb-10 md:pt-7 md:pb-18">
@@ -45,6 +48,7 @@ export function PageHero({ breadcrumb, title, description }: PageHeroProps) {
         <p className="mt-3.5 max-w-[620px] text-[17px] text-tint md:mt-5 md:text-xl">
           {description}
         </p>
+        {children}
       </Container>
     </section>
   )

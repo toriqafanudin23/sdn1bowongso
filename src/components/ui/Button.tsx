@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 import { cn } from '@/lib/cn'
 
 export const buttonVariants = cva(
-  'group inline-flex items-center justify-center gap-2 text-center font-bold transition-colors duration-150 motion-reduce:transition-none',
+  'group inline-flex items-center justify-center gap-2 text-center font-bold transition-colors duration-150 disabled:pointer-events-none disabled:opacity-60 motion-reduce:transition-none',
   {
     variants: {
       variant: {
@@ -13,8 +13,10 @@ export const buttonVariants = cva(
         primary: 'bg-accent text-ink hover:bg-white',
         /** Garis putih: aksi sekunder di atas latar biru. */
         outline: 'text-white ring-2 ring-white ring-inset hover:bg-white hover:text-ink',
-        /** Navy: aksi utama di atas latar kuning. */
+        /** Navy: aksi utama di atas latar kuning atau putih. */
         dark: 'bg-ink text-white hover:bg-brand',
+        /** Garis navy: aksi sekunder di atas latar putih. */
+        outlineDark: 'text-ink ring-2 ring-ink ring-inset hover:bg-ink hover:text-white',
       },
       size: {
         /** Ponsel: selebar kolom dengan target sentuh 48px. Desktop: selebar konten. */

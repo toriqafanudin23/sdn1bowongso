@@ -27,7 +27,44 @@ export const router = createBrowserRouter([
         path: ROUTES.information,
         lazy: async () => ({ Component: (await import('@/pages/InformationPage')).default }),
       },
+      {
+        path: ROUTES.admission,
+        lazy: async () => ({ Component: (await import('@/pages/AdmissionPage')).default }),
+      },
+      {
+        path: ROUTES.admissionStatus,
+        lazy: async () => ({ Component: (await import('@/pages/AdmissionPage')).default }),
+      },
+      {
+        path: ROUTES.contact,
+        lazy: async () => ({ Component: (await import('@/pages/ContactPage')).default }),
+      },
       { path: '*', Component: ComingSoonPage },
     ],
+  },
+  // Panel admin memakai kerangka sendiri (tanpa navbar dan footer publik) dan wajib login.
+  {
+    path: ROUTES.adminDashboard,
+    lazy: async () => {
+      const [{ AdminLayout }, { requireAdmin }] = await Promise.all([
+        import('@/features/admin/components/AdminLayout'),
+        import('@/features/admin/session'),
+      ])
+      return { Component: AdminLayout, loader: requireAdmin }
+    },
+    children: [
+      {
+        index: true,
+        lazy: async () => ({ Component: (await import('@/pages/AdminDashboardPage')).default }),
+      },
+      {
+        path: '*',
+        lazy: async () => ({ Component: (await import('@/pages/AdminComingSoonPage')).default }),
+      },
+    ],
+  },
+  {
+    path: ROUTES.adminLogin,
+    lazy: async () => ({ Component: (await import('@/pages/AdminLoginPage')).default }),
   },
 ])

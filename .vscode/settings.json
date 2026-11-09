@@ -1,0 +1,8 @@
+{
+  "explorer.excludeGitIgnore": false,
+  "explorer.decorations.colors": true,
+  "git.decorations.enabled": true,
+  "workbench.colorCustomizations": {
+    "gitDecoration.ignoredResourceForeground": "#808080"
+  }
+}

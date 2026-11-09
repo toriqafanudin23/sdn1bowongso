@@ -20,3 +20,16 @@ export const CONTACT = {
   phone: '[Nomor telepon / WhatsApp sekolah]',
   email: '[Email sekolah]',
 } as const
+
+/**
+ * TODO: alamat dasar API pendaftaran (backend). Selama kosong, formulir PPDB tetap
+ * bisa diisi dan drafnya tersimpan di perangkat, tetapi pengiriman dan cek status
+ * menampilkan pesan "belum aktif". Kontrak API ada di features/admission/api.ts.
+ */
+export const ADMISSION_API_URL = ''
+
+/** TODO: alamat dasar API pesan kontak. Kosong = formulir Kontak menampilkan "belum aktif". Kontrak: features/contact/api.ts. */
+export const CONTACT_API_URL = ''
+
+/** TODO: alamat dasar API admin (login, berita, pendaftar). Kosong = login menampilkan "belum aktif". Kontrak: features/admin/api.ts. */
+export const ADMIN_API_URL = ''
