@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/public-sans';
+@import '@fontsource/young-serif';
+
+/*
+ * Design tokens (sumber: desain "Redesign SDN 1 Bowongso").
+ * Setiap token otomatis menjadi utility Tailwind, mis. `bg-brand`, `text-ink`,
+ * `font-display`, `max-w-site`, `shadow-nav`.
+ */
+@theme {
+  --font-sans: 'Public Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Young Serif', ui-serif, Georgia, serif;
+
+  --color-brand: #1740d6; /* biru utama */
+  --color-ink: #0e1b4d; /* navy: teks & permukaan gelap */
+  --color-accent: #ffd21f; /* kuning */
+  --color-muted: #44507a; /* teks sekunder di latar terang */
+  --color-tint: #dce5ff; /* teks sekunder di latar gelap */
+  --color-line: #c9d3f2; /* garis pemisah di latar terang */
+  --color-surface: #eaf0ff;
+  --color-placeholder-line: #7c93e6; /* garis putus-putus kotak foto sementara */
+
+  --container-site: 75rem; /* 1200px */
+  --shadow-nav: 0 2px 14px rgb(14 27 77 / 0.18);
+}
+
+/*
+ * Tinggi navbar: satu sumber kebenaran untuk Navbar, Hero, dan halaman lain.
+ * Navbar menimpa (overlay) konten pertama, sehingga section pertama harus
+ * memberi ruang `pt-(--header-h)`.
+ */
+:root {
+  --header-h: 4.25rem; /* 68px ponsel */
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --header-h: 5.5rem; /* 88px desktop */
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-white font-sans text-base leading-[1.55] text-ink antialiased md:text-[17px] md:leading-[1.6];
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-normal;
+  }
+
+  /* Fokus keyboard selalu terlihat; warna mengikuti teks (putih di biru, navy di kuning/putih). */
+  :focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
+/* Latar biru dengan garis kisi tipis, ciri khas desain. */
+@utility bg-grid {
+  background-color: var(--color-brand);
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.13) 1px, transparent 1px);
+  background-size: 32px 32px;
+
+  @media (min-width: 48rem) {
+    background-size: 40px 40px;
+  }
+}
