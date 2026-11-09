@@ -1,6 +1,8 @@
-# Web SDN 1 Bowongso
+# Template Website Sekolah
 
 React 19 + TypeScript + Vite 8 + Tailwind CSS v4. Mobile-first.
+
+Template website sekolah. Identitas sekolah (nama, jenis, tagline, deskripsi, periode PPDB, kontak) hanya diisi di `src/config/site.ts`; selebihnya website membaca dari sana.
 
 ## Menjalankan
 
@@ -48,7 +50,7 @@ src/
 - Berita dan agenda di halaman Informasi memakai data yang sama dengan Beranda (`features/home/content.ts`); demikian juga program unggulan Akademik.
 - Halaman PPDB (`/ppdb`, dan `/ppdb/status` yang langsung ke bagian Cek status) sudah jadi. Ketentuan jalur Afirmasi/Perpindahan, daftar berkas wajib, dan jam layanan masih placeholder di `features/admission/content.ts`.
 - Formulir PPDB menyimpan draf teks di localStorage. Pengiriman dan cek status butuh backend: isi `ADMISSION_API_URL` di `config/site.ts` (kontrak di `features/admission/api.ts`). Selama kosong, kedua fitur menampilkan pesan "belum aktif".
-- Dashboard admin (`/admin`, halaman Ringkasan) sudah jadi beserta kerangka panel (sidebar desktop; bilah atas, tab bawah, dan menu layar penuh di ponsel). Rute ini dijaga `requireAdmin` (`features/admin/session.ts`): belum login diarahkan ke `/admin/masuk`. **Mode demo** (`features/admin/demo.ts`): selama `ADMIN_API_URL` kosong, login sementara aktif saat `npm run dev` (atau build dengan env `VITE_ADMIN_DEMO=true`) dengan akun `admin@sdn1bowongso.test` / `demo-admin` dan data contoh berlabel; mati otomatis begitu `ADMIN_API_URL` diisi, dan hapus `demo.ts` sebelum rilis resmi. Kontrak API: `features/admin/api.ts` (`/auth/me`, `/auth/logout`, `/dashboard`, `/admission`). Menu lain di panel (Berita, Pengumuman, Agenda, dst.) menampilkan `AdminComingSoonPage` di dalam kerangka yang sama. Kolom pencarian di bilah atas masih nonaktif.
+- Dashboard admin (`/admin`, halaman Ringkasan) sudah jadi beserta kerangka panel (sidebar desktop; bilah atas, tab bawah, dan menu layar penuh di ponsel). Rute ini dijaga `requireAdmin` (`features/admin/session.ts`): belum login diarahkan ke `/admin/masuk`. **Mode demo** (`features/admin/demo.ts`): selama `ADMIN_API_URL` kosong, login sementara aktif saat `npm run dev` (atau build dengan env `VITE_ADMIN_DEMO=true`) dengan akun `admin@sekolah.test` / `demo-admin` dan data contoh berlabel; mati otomatis begitu `ADMIN_API_URL` diisi, dan hapus `demo.ts` sebelum rilis resmi. Kontrak API: `features/admin/api.ts` (`/auth/me`, `/auth/logout`, `/dashboard`, `/admission`). Menu lain di panel (Berita, Pengumuman, Agenda, dst.) menampilkan `AdminComingSoonPage` di dalam kerangka yang sama. Kolom pencarian di bilah atas masih nonaktif.
 - Halaman Kontak (`/kontak`) dan Masuk admin (`/admin/masuk`, kerangka tanpa navbar/footer) sudah jadi. Desain Kontak tidak ada di `desain_website.html`, jadi disusun dengan pola yang sama; data di `features/contact/content.ts` dan `CONTACT` (config/site.ts) masih placeholder.
 - Pesan Kontak dan login admin butuh backend: isi `CONTACT_API_URL` dan `ADMIN_API_URL` di `config/site.ts` (kontrak di `api.ts` masing-masing; sesi admin diharapkan lewat cookie HttpOnly). Selama kosong, keduanya menampilkan pesan "belum aktif". 
 - Rute Galeri masih `ComingSoonPage`.

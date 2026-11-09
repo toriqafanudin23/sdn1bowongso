@@ -1,6 +1,7 @@
 import type { ChipOption } from '@/components/ui/FilterChips'
 import type { KeyValue } from '@/components/ui/KeyValueList'
 import type { SectionLink } from '@/components/ui/SectionNav'
+import { SITE } from '@/config/site'
 
 /**
  * TODO: ganti nilai berkurung siku dengan data resmi sekolah (sengaja tidak diisi data karangan).
@@ -18,7 +19,7 @@ export const ACADEMIC_SECTIONS: readonly SectionLink[] = [
 ]
 
 export const CURRICULUM_STATEMENT =
-  'SDN 1 Bowongso memakai Kurikulum Merdeka: pembelajaran berdiferensiasi yang memberi ruang bagi minat dan bakat setiap murid.'
+  `${SITE.name} memakai Kurikulum Merdeka: pembelajaran berdiferensiasi yang memberi ruang bagi minat dan bakat setiap murid.`
 
 export const CURRICULUM_PHASES: readonly KeyValue[] = [
   { label: 'Fase A', value: 'Kelas 1 dan 2' },

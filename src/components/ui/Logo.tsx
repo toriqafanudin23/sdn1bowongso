@@ -26,7 +26,7 @@ export function LogoMark({ tone, className }: LogoMarkProps) {
 
 interface LogoProps {
   tone: LogoTone
-  /** Tampilkan keterangan "Sekolah Dasar Negeri" (hanya di layar besar). */
+  /** Tampilkan keterangan jenis sekolah (`SITE.type`) (hanya di layar besar). */
   showSubtitle?: boolean
   onClick?: () => void
   className?: string

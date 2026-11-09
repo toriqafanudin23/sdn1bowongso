@@ -1,9 +1,14 @@
+/**
+ * Identitas sekolah: SATU-SATUNYA tempat nama dan jenis sekolah diisi. Seluruh website
+ * (navbar, footer, judul halaman, teks) membaca dari sini. Ganti nilai berkurung siku
+ * saat memakai template ini untuk sekolah baru.
+ */
 export const SITE = {
-  name: 'SDN 1 Bowongso',
-  type: 'Sekolah Dasar Negeri',
+  name: '[Nama Sekolah]',
+  type: '[Jenis sekolah]',
   tagline: 'Belajar ceria, tumbuh cerdas, dan berkarakter.',
   description:
-    'Sekolah dasar negeri yang ramah anak, dengan Kurikulum Merdeka dan guru yang mendampingi tiap murid.',
+    'Sekolah yang ramah anak, dengan Kurikulum Merdeka dan guru yang mendampingi tiap murid.',
 } as const
 
 export const PPDB = {
@@ -16,7 +21,7 @@ export const PPDB = {
  * sesuai desain, sengaja tidak diisi data karangan.
  */
 export const CONTACT = {
-  address: '[Alamat lengkap SDN 1 Bowongso]',
+  address: '[Alamat lengkap sekolah]',
   phone: '[Nomor telepon / WhatsApp sekolah]',
   email: '[Email sekolah]',
 } as const

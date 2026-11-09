@@ -10,7 +10,7 @@ import type { DashboardData } from './api'
 export const DEMO_ENABLED =
   !ADMIN_API_URL && (import.meta.env.DEV || import.meta.env.VITE_ADMIN_DEMO === 'true')
 
-export const DEMO_CREDENTIALS = { email: 'admin@sdn1bowongso.test', password: 'demo-admin' } as const
+export const DEMO_CREDENTIALS = { email: 'admin@sekolah.test', password: 'demo-admin' } as const
 
 const SESSION_KEY = 'admin-demo-session'
 

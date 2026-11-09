@@ -1,12 +1,13 @@
 import type { ChipOption } from '@/components/ui/FilterChips'
 import type { KeyValue } from '@/components/ui/KeyValueList'
 import type { SectionLink } from '@/components/ui/SectionNav'
+import { SITE } from '@/config/site'
 import { unsplashImage } from '@/lib/unsplash'
 import type { Facility, StaffCategory, StaffMember } from './types'
 
 /**
  * Foto sementara dari Unsplash untuk melengkapi tampilan website.
- * Ganti dengan foto dan data resmi SDN 1 Bowongso saat aset asli tersedia.
+ * Ganti dengan foto dan data resmi sekolah saat aset asli tersedia.
  */
 
 /** Urutan di sini = urutan section di halaman = urutan tautan sub-menu. */
@@ -19,7 +20,7 @@ export const PROFILE_SECTIONS: readonly SectionLink[] = [
 ]
 
 export const HISTORY_STATEMENT =
-  '[Tuliskan sejarah berdirinya SDN 1 Bowongso: tahun berdiri, latar belakang, dan tonggak penting.]'
+  '[Tuliskan sejarah berdirinya sekolah: tahun berdiri, latar belakang, dan tonggak penting.]'
 
 export const HISTORY_PHOTO = {
   ...unsplashImage({
@@ -27,7 +28,7 @@ export const HISTORY_PHOTO = {
     width: 960,
     widths: [480, 640, 960, 1280],
   }),
-  alt: 'Gedung dan lingkungan sekolah SDN 1 Bowongso',
+  alt: 'Gedung dan lingkungan sekolah',
 } as const
 
 /** Hanya tampil di layar md ke atas (sesuai desain, ponsel menampilkan pernyataan dan foto saja). */
@@ -38,7 +39,7 @@ export const HISTORY_TIMELINE: readonly KeyValue[] = [
 ]
 
 export const SCHOOL_IDENTITY: readonly KeyValue[] = [
-  { label: 'Nama sekolah', value: 'SDN 1 Bowongso' },
+  { label: 'Nama sekolah', value: SITE.name },
   { label: 'NPSN', value: '[NPSN]' },
   { label: 'Status', value: 'Negeri' },
   { label: 'Akreditasi', value: '[ A ]' },
@@ -47,7 +48,7 @@ export const SCHOOL_IDENTITY: readonly KeyValue[] = [
   { label: 'Kepala sekolah', value: '[Nama Kepala Sekolah]' },
 ]
 
-export const VISION = '[Tuliskan visi SDN 1 Bowongso di sini.]'
+export const VISION = '[Tuliskan visi sekolah di sini.]'
 
 export const MISSIONS: readonly KeyValue[] = [
   { label: 'Misi 1', value: '[Misi pertama sekolah.]' },
@@ -77,7 +78,7 @@ export const STAFF: readonly StaffMember[] = [
         width: 400,
         widths: [200, 400, 600],
       }),
-      alt: 'Kepala Sekolah SDN 1 Bowongso',
+      alt: 'Kepala Sekolah',
     },
   },
   {
@@ -91,7 +92,7 @@ export const STAFF: readonly StaffMember[] = [
         width: 400,
         widths: [200, 400, 600],
       }),
-      alt: 'Guru Kelas SDN 1 Bowongso',
+      alt: 'Guru Kelas',
     },
   },
   {
@@ -105,7 +106,7 @@ export const STAFF: readonly StaffMember[] = [
         width: 400,
         widths: [200, 400, 600],
       }),
-      alt: 'Guru Mata Pelajaran SDN 1 Bowongso',
+      alt: 'Guru Mata Pelajaran',
     },
   },
   {
@@ -119,7 +120,7 @@ export const STAFF: readonly StaffMember[] = [
         width: 400,
         widths: [200, 400, 600],
       }),
-      alt: 'Tenaga Kependidikan SDN 1 Bowongso',
+      alt: 'Tenaga Kependidikan',
     },
   },
 ]

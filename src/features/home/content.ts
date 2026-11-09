@@ -12,11 +12,11 @@ import type { AcademicProgram, AgendaEvent, NewsPost, SchoolStat } from './types
 export const HERO_PHOTO = {
   src: '/hero.jpg',
   alt: 'Dua siswi berseragam merah putih bersepeda di lingkungan sekolah',
-  fallbackLabel: '[Foto murid SDN 1 Bowongso]',
+  fallbackLabel: '[Foto murid sekolah]',
 } as const
 
 export const ABOUT_STATEMENT =
-  'Pembelajaran di SDN 1 Bowongso aktif, kreatif, dan menyenangkan. Guru mendampingi setiap anak di lingkungan yang aman dan ramah anak.'
+  'Pembelajaran di sekolah kami aktif, kreatif, dan menyenangkan. Guru mendampingi setiap anak di lingkungan yang aman dan ramah anak.'
 
 export const SCHOOL_STATS: readonly SchoolStat[] = [
   { label: 'Peserta didik', value: '312' },
